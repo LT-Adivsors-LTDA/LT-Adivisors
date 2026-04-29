@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LT Advisors Ltds - Assessoria e Consultoria em Leilão de Imóveis e Locação por Temporada.">
+    <title>LT Advisors LTDA| Inteligência Imobiliária</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --gold: #d4af37;
+            --gold-hover: #b5952f;
+            --text-light: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'DM Sans', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .social-icons a {
+            color: #fff;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-icons a:hover {
+            color: var(--gold);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 0 10%;
+            background: linear-gradient(to right, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 100%), 
+                        url('logo-lt.jpeg') center/cover;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+        }
+
+        .services {
+            padding: 100px 10%;
+            background-color: var(--bg-dark);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 1px;
+            height: 100%;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            padding: 50px 40px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .airbnb-showcase {
+            padding: 100px 10%;
+            background-color: #0d0d0d;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .property-card {
+            background-color: var(--bg-card);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+        }
+
+        .property-card:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .property-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .property-card:hover .property-img {
+            transform: scale(1.05);
+        }
+
+        .property-img-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .airbnb-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff385c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .property-info {
+            padding: 30px;
+        }
+
+        .property-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .property-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            min-height: 80px; 
+        }
+
+        .cta-section {
+            padding: 100px 10%;
+            text-align: center;
+            background: linear-gradient(rgba(10,10,10,0.8), rgba(10,10,10,0.9)), 
+                        url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover fixed;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            padding: 60px 10%;
+            background-color: #050505;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            margin-left: 30px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 20px; flex-direction: column; gap: 15px; }
+            .hero { padding: 0 5%; text-align: center; justify-content: center; }
+            .hero-actions { flex-direction: column; }
+            .services, .airbnb-showcase, .cta-section { padding: 60px 5%; }
+            .services::before { display: none; }
+            footer { flex-direction: column; text-align: center; }
+            .footer-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            LT <span>Advisors Ltda</span>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@lt.advisors" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/ltassessoriaeconsultoria" target="_blank">Instagram</a>
+            <a href="https://linktr.ee/ltadvisors" target="_blank">Links</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">Inteligência Imobiliária</span>
+            <h1>Todo dia é dia de <span class="gold-text">aluguel</span>.</h1>
+            <p>Assessoria especializada em leilão de imóveis e gestão de excelência em locações por temporada no Airbnb.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/5511999999999" target="_blank" class="btn btn-gold">Assessoria em Leilões</a>
+                <a href="#imoveis" class="btn btn-outline">Nossos Imóveis</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-header">
+            <span class="hero-subtitle">Nossa Expertise</span>
+            <h2>Maximizando seu Patrimônio</h2>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>Leilão de Imóveis</h3>
+                <p>Análise de risco, segurança jurídica e mapeamento de oportunidades. Assessoramos investidores para arrematações seguras e altamente lucrativas no mercado imobiliário.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🗝️</div>
+                <h3>Gestão Airbnb</h3>
+                <p>Transformamos seu imóvel em uma máquina de rentabilidade. Gestão completa de ponta a ponta para locações por temporada, garantindo a melhor experiência para o hóspede.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="imoveis" class="airbnb-showcase">
+        <div class="section-header">
+            <span class="hero-subtitle">Locação por Temporada</span>
+            <h2>Hospede-se com a LT</h2>
+        </div>
+
+        <div class="properties-grid">
+            
+            <div class="property-card">
+                <div class="property-img-wrapper">
+                    <span class="airbnb-badge">Airbnb</span>
+                    <img src="casa-buzios.jpg" alt="Casa Privativa em Geribá" class="property-img">
+                </div>
+                <div class="property-info">
+                    <h4>Casa Privativa em Geribá</h4>
+                    <p>3 quartos (1 suíte), piscina exclusiva e área gourmet completa. Apenas 10 minutos a pé da Praia de Geribá e 8 min do Porto da Barra.</p>
+                    
+                    <a href="https://www.airbnb.com.br/rooms/47797444?_set_bev_on_new_domain=1750897661_EANjVmNGY3ZTRlNz&set_everest_cookie_on_new_domain=1750897661.EANzFjYzQ2NjQxYmIzZT.vX0A6Dxr84Nm36SYZurwZ60fTUXEGc1vxRYwCBP1uq0&source_impression_id=p3_1777486620_P3LXTEQmWzMBBX1Z" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Ver no Airbnb</a>
+                </div>
+            </div>
+
+            <div class="property-card">
+                <div class="property-img-wrapper">
+                    <span class="airbnb-badge">Airbnb</span>
+                    <img src="apt-conservatoria.jpg" alt="Apartamento em Conservatória" class="property-img">
+                </div>
+                <div class="property-info">
+                    <h4>Apt na Cidade das Serestas</h4>
+                    <p>Aconchegante apto de 2 quartos no coração de Conservatória. A 2 minutos do centro histórico, perfeito para curtir cultura e gastronomia.</p>
+                    
+                    <a href="https://www.airbnb.com.br/rooms/1382906271994146194?_set_bev_on_new_domain=1750897661_EANjVmNGY3ZTRlNz&set_everest_cookie_on_new_domain=1750897661.EANzFjYzQ2NjQxYmIzZT.vX0A6Dxr84Nm36SYZurwZ60fTUXEGc1vxRYwCBP1uq0&source_impression_id=p3_1777486646_P3FNhOiJ8hRD-3kV" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Ver no Airbnb</a>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-img-wrapper">
+                    <span class="airbnb-badge">Airbnb</span>
+                    <img src="Piscina-Privativa-Ideal-p-Casal.jpg" alt="Geribá: Piscina Privativa" class="property-img">
+                </div>
+                <div class="property-info">
+                    <h4>Geribá: Piscina Privativa</h4>
+                    <p>Casa privativa com 1 suíte, piscina exclusiva, área gourmet completa e bilhar. Ideal para casais. A apenas 10 min a pé da Praia de Geribá.</p>
+                    
+                    <a href="COLOQUE_O_LINK_AQUI" target="_blank" class="btn btn-outline" style="width: 100%; text-align: center;">Ver no Airbnb</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <span class="hero-subtitle">Assessoria Especializada</span>
+        <h2>Invista com Segurança</h2>
+        <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem;">Qualquer dúvida sobre leilões ou links de locação, chame no chat.</p>
+        <a href="https://wa.me/5521971471576" target="_blank" class="btn btn-gold">Falar com Consultor</a>
+    </section>
+
+    <footer>
+        <div class="footer-logo">
+            LT Advisors LTDA &copy; 2025
+        </div>
+        <div class="footer-links">
+            <a href="https://www.instagram.com/ltassessoriaeconsultoria" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@lt.advisors" target="_blank">TikTok</a>
+        </div>
+    </footer>
+
+</body>
+</html>
